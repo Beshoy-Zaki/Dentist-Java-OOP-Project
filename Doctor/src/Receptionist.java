@@ -14,7 +14,7 @@ public class Receptionist extends Staff {
     public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
-
+//test
     public void setSalary(double salary) {
         this.salary = salary;
     }
