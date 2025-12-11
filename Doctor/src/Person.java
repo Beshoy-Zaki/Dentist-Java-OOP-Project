@@ -25,8 +25,10 @@ String getNumber(){
 return number;
 }
 int calculateAge(){
-Date today = new Date();
-int age =today.getYear()-this.dateOfBirth.getYear();
+Calendar today = Calendar.getInstance();
+Calendar birthDate = Calendar.getInstance();
+birthDate.setTime(this.dateOfBirth);
+int age = today.get(Calendar.YEAR) - birthDate.get(Calendar.YEAR);
 return age;
 
         
