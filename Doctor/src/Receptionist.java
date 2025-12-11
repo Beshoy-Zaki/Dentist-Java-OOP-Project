@@ -54,7 +54,7 @@ public class Receptionist extends Staff {
         
     public Payment generateInvoice(Appointment a) {//insurance?
 
-        Payment p = new Payment(payment.calculateTotal(), a.getPatient(), a);
+        Payment p = new Payment(a.getPayment().calculateTotal(), a.getPatient(), a);
         a.setPayment(p);
         return p;
     }
