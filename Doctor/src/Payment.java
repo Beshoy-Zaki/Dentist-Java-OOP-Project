@@ -45,12 +45,7 @@ public class Payment implements Comparable<Payment>, Printable {
         System.out.println("Patient: " + patient);
         System.out.println("Appointment: " + appointment);
     }
-/*
-    @Override
-    public void sendNotification() {
-        System.out.println("Notification sent to patient: " + patient);
-    }
- */
+
     // -------- Comparable Interface Method --------
     @Override
     public int compareTo(Payment other) {
@@ -60,6 +55,6 @@ public class Payment implements Comparable<Payment>, Printable {
 
         return Double.compare(a1, a2);
     }
-//Add calculateBonus
-//
+
 }
+
