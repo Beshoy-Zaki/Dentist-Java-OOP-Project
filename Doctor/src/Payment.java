@@ -4,7 +4,7 @@
 // Q1: The +sendNotification() void method exists in Mermaid but not in Java. What shall I do? Should we remove it from the mermaid text or should I make the payment class implement the notifiable interface?
 // Q2: The getStatus() method says that it returns a boolean in the mermaid 🥴 p.s. it shouldn't.
 // and other minimal things that shouldn't bother you.
-
+import java.util.Date;
 public class Payment implements Comparable<Payment>, Printable {
 
     private double amount;
@@ -14,7 +14,7 @@ public class Payment implements Comparable<Payment>, Printable {
     private Appointment appointment;
 
     // -------- Constructor --------
-    public Payment(double  amount, String dueDate, boolean isPaid, Patient patient, Appointment appointment) {
+    public Payment(double  amount, Date dueDate, boolean isPaid, Patient patient, Appointment appointment) {
         this.amount = amount;
         this.dueDate = dueDate;
         this.isPaid = isPaid;
@@ -22,7 +22,7 @@ public class Payment implements Comparable<Payment>, Printable {
         this.appointment = appointment;
     }
     public double calculateTotal(){
-        if(this.patient.getinsuranceStatus()){
+        if(this.patient.getInsuranceStatus()){
             return this.amount * 0.9;
         }
         else return this.amount;

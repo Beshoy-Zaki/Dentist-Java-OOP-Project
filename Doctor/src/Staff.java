@@ -3,19 +3,30 @@ public abstract class Staff extends Person {
     protected int staffId;
     protected double salary;
     protected Date hireDate;
-    private static int staffNumber = 0 ;
+    private static int staffNumber = 0;
 
-    public Staff(int id, String name, String phone, Date dob, int staffId, double salary, Date hireDate) {
-        super(id, name, phone, dob);
-        this.staffId = staffId;
+    public Staff(String name, String gender, Date dob, int staffId, double salary, Date hireDate, String contact) {
+        super(name, dob, gender, contact);
         this.salary = salary;
         this.hireDate = hireDate;
-        staffNumber++;              
+        
+        // Auto-increment logic
+        staffNumber++;
         this.staffId = staffNumber; 
     }
+
     public static int getStaffNumber() {
         return staffNumber;
     }
-    // @override Display Info
+
+    @Override
+    protected void displayInfo() {
+        System.out.println("Staff ID: " + this.staffId);
+        System.out.println("Name: " + getName());
+        System.out.println("Gender: " + getGender());
+        System.out.println("Contact: " + getNumber());
+        System.out.println("Salary: " + this.salary);
+    }
+
     public abstract double calculateBonus();
 }

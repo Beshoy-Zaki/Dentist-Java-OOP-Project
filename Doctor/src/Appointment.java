@@ -37,13 +37,13 @@ public class Appointment implements Schedulable, Notifiable, Comparable<Appointm
         this.status = "Rescheduled";
         System.out.println("Appointment rescheduled successfully");
     }
-/* 
+
     @Override
     public boolean isUpcoming() {
         Date now = new Date();
         return this.date.after(now);
     }
-*/
+
 
 
     // notifiable

@@ -1,27 +1,34 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
 public class Doctor extends Staff {
     private String specialization;
-    private List<Appointment> schedule;
+    private ArrayList<Appointment> schedule; 
 
-    public Doctor(int id, String name, String phone, Date dob,
-                  int staffId, double salary, Date hireDate,
-                  String specialization) {
-        super(id, name,  phone,  dob,  staffId,  salary,  hireDate);
+    public Doctor(String name, String gender, Date dob, int staffId, double salary, Date hireDate, String contact, String specialization) {
+        super(name, gender, dob, staffId, salary, hireDate, contact);
         this.specialization = specialization;
-        this.schedule = new ArrayList<>();
+        this.schedule = new ArrayList<>(); 
     }
-    // Override Calculate Bonus
-    public double calculateBonus(){return 0;}
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    @Override
+    public double calculateBonus() {
+        return this.salary * 0.25;
+    }
 
     @Override
     public void displayInfo() {
-        System.out.println("Doctor Info:");
+        super.displayInfo();
+        
         System.out.println("Specialization: " + specialization);
-        System.out.println("Appointments:");
+        System.out.println("Scheduled Appointments: " + schedule.size());
+        
         for (Appointment a : schedule) {
-            System.out.println(a);
+            System.out.println(" - " + a.toString());
         }
     }
 
@@ -37,6 +44,7 @@ public class Doctor extends Staff {
     public void addAppointment(Appointment appointment) {
         if (isAvailable(appointment.getDateTime())) {
             schedule.add(appointment);
+            System.out.println("Appointment added to Doctor's schedule.");
         } else {
             System.out.println("Doctor not available on " + appointment.getDateTime());
         }
