@@ -1,7 +1,14 @@
+// 9:24 PM Saturday, December 13, 2025
+// at the request of Mark Sameh, I revised the code and wrote this.
+// Questions to ask Bo4:
+// Q1: The +sendNotification() void method exists in Mermaid but not in Java. What shall I do? Should we remove it from the mermaid text or should I make the payment class implement the notifiable interface?
+// Q2: The getStatus() method says that it returns a boolean in the mermaid 🥴 p.s. it shouldn't.
+// and other minimal things that shouldn't bother you.
+
 public class Payment implements Comparable<Payment>, Printable {
 
     private double amount;
-    private String dueDate;
+    private Date dueDate; // Data type fixed to match the mermaid text ✅
     private boolean isPaid;
     private Patient patient;
     private Appointment appointment;
@@ -57,4 +64,5 @@ public class Payment implements Comparable<Payment>, Printable {
     }
 
 }
+
 
