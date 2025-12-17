@@ -1,4 +1,33 @@
-## Getting Started
+Doctor module — running tests and GUI
+=====================================
+
+Quick commands (from the repository root):
+
+- Run unit tests:
+
+```
+mvn -f Doctor/pom.xml test
+```
+
+- Run the JavaFX GUI (Linux/X11):
+
+If you are on a headless machine or CI, use Xvfb:
+
+```
+xvfb-run -s "-screen 0 1280x800x24" mvn -f Doctor/pom.xml exec:java
+```
+
+Or on a regular Linux desktop with DISPLAY available:
+
+```
+mvn -f Doctor/pom.xml exec:java
+```
+
+Notes
+- The project uses JavaFX 11 artifacts built for Linux. If you run on
+  macOS or Windows, update the JavaFX dependency classifiers in
+  `Doctor/pom.xml` (or add Maven profiles) to match your OS.
+- If you need a portable Maven wrapper, I can add `mvnw` to the repo.## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
