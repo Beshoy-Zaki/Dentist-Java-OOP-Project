@@ -20,11 +20,21 @@ public class Patient extends Person {
         patientCount++;
         this.patientId = patientCount;
     }
+
     public void addAppointment(Appointment a) {
-        // No need for loops or resizing! ArrayList handles it.
-        this.appointments.add(a);
-        System.out.println("Appointment added successfully.");
+        try {
+            if (a == null) {
+                throw new NullPointerException("Cannot add a null appointment.");
+            }
+            // Original logic
+            this.appointments.add(a);
+            System.out.println("Appointment added successfully.");
+
+        } catch (NullPointerException e) {
+            System.err.println("Patient Record Error: " + e.getMessage());
+        }
     }
+
     public int getPatientId() {
         return patientId;
     }
@@ -37,17 +47,25 @@ public class Patient extends Person {
         return prescriptions;
     }
 
-    // Updated Getter to return ArrayList
     public ArrayList<Appointment> getAppointments() {
         return appointments;
     }
+
     @Override
     public void displayInfo() {
         System.out.println("Patient name: " + getName());
         System.out.println("Date of Birth: " + (getDateOfBirth() != null ? getDateOfBirth() : "N/A"));
-        System.out.println("Gender:        " + getGender());
-        System.out.println("Contact No:    " + getNumber());
-        System.out.println("Patient ID:    " + this.patientId);
-        System.out.println("Total Appointments: " + appointments.size());
+        System.out.println("Gender:         " + getGender());
+        System.out.println("Contact No:     " + getNumber());
+        System.out.println("Patient ID:     " + this.patientId);
+        
+        try {
+            if (this.appointments == null) {
+                throw new NullPointerException("Appointment list is not initialized.");
+            }
+            System.out.println("Total Appointments: " + appointments.size());
+        } catch (NullPointerException e) {
+            System.out.println("Total Appointments: [Data Error]");
+        }
     }
 }

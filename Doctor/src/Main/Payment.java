@@ -5,10 +5,11 @@
 // Q2: The getStatus() method says that it returns a boolean in the mermaid 🥴 p.s. it shouldn't.
 // and other minimal things that shouldn't bother you.
 import java.util.Date;
+
 public class Payment implements Comparable<Payment>, Printable {
 
     private double amount;
-    private Date dueDate; // Data type fixed to match the mermaid text ✅
+    private Date dueDate; 
     private boolean isPaid;
     private Patient patient;
     private Appointment appointment;
@@ -21,19 +22,38 @@ public class Payment implements Comparable<Payment>, Printable {
         this.patient = patient;
         this.appointment = appointment;
     }
+
     public double calculateTotal(){
-        if(this.patient.getInsuranceStatus()){
-            return this.amount * 0.9;
+        try {
+            if (this.amount < 0) {
+                throw new IllegalArgumentException("Payment amount cannot be negative.");
+            }
+
+            // Original Logic
+            if(this.patient.getInsuranceStatus()){
+                return this.amount * 0.9;
+            }
+            else return this.amount;
+
+        } catch (IllegalArgumentException e) {
+            System.err.println("Calculation Error: " + e.getMessage());
+            return 0.0;
         }
-        else return this.amount;
     }
+
     // -------- Business Methods --------
     public void processPayment() {
-        if (!isPaid) {
+        try {
+            if (isPaid) {
+                throw new IllegalStateException("Payment has already been processed.");
+            }
+            
+            // Original Logic
             isPaid = true;
             System.out.println("Payment processed successfully.");
-        } else {
-            System.out.println("Payment already completed.");
+            
+        } catch (IllegalStateException e) {
+            System.out.println("Payment Alert: " + e.getMessage());
         }
     }
 
@@ -42,7 +62,6 @@ public class Payment implements Comparable<Payment>, Printable {
     }
 
     // -------- Printable Interface Methods --------
-
     @Override
     public void printDetails() {
         System.out.println("---- Payment Details ----");
@@ -56,13 +75,8 @@ public class Payment implements Comparable<Payment>, Printable {
     // -------- Comparable Interface Method --------
     @Override
     public int compareTo(Payment other) {
-        // Compare numerically by amount
         double a1 = this.amount;
         double a2 = other.amount;
-
         return Double.compare(a1, a2);
     }
-
 }
-
-

@@ -33,20 +33,41 @@ public class Doctor extends Staff {
     }
 
     public boolean isAvailable(Date date) {
-        for (Appointment a : schedule) {
-            if (a.getDateTime().equals(date)) {
-                return false;
+        try {
+            if (date == null) {
+                throw new IllegalArgumentException("Date cannot be null to check availability.");
             }
+
+            // Original Logic
+            for (Appointment a : schedule) {
+                if (a.getDateTime().equals(date)) {
+                    return false;
+                }
+            }
+            return true;
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Availability Check Skipped: " + e.getMessage());
+            return false;
         }
-        return true;
     }
 
     public void addAppointment(Appointment appointment) {
-        if (isAvailable(appointment.getDateTime())) {
-            schedule.add(appointment);
-            System.out.println("Appointment added to Doctor's schedule.");
-        } else {
-            System.out.println("Doctor not available on " + appointment.getDateTime());
+        try {
+            if (appointment == null) {
+                throw new NullPointerException("Cannot add a null appointment to schedule.");
+            }
+
+            // Original Logic
+            if (isAvailable(appointment.getDateTime())) {
+                schedule.add(appointment);
+                System.out.println("Appointment added to Doctor's schedule.");
+            } else {
+                System.out.println("Doctor not available on " + appointment.getDateTime());
+            }
+
+        } catch (NullPointerException e) {
+            System.err.println("Error adding appointment: " + e.getMessage());
         }
     }
 }

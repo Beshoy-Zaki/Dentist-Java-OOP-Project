@@ -147,6 +147,7 @@ public class ClinicGUI extends Application {
             setSpacing(20);
             setPadding(new Insets(20));
 
+
             Label header = new Label("Doctor Management");
             header.setFont(Font.font("Segoe UI", FontWeight.BOLD, 22));
 

@@ -1,3 +1,4 @@
+MainLauncher.class
 Receptionist.class
 ClinicGUI$AppointmentPane$2.class
 Appointment.class
@@ -7,6 +8,7 @@ Payment.class
 Prescription.class
 Schedulable.class
 ClinicGUI$AppointmentPane$1.class
+Test.class
 ClinicGUI$AppointmentPane.class
 ClinicGUI$PatientPane.class
 ClinicGUI.class

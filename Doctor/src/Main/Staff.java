@@ -1,4 +1,5 @@
 import java.util.Date;
+
 public abstract class Staff extends Person {
     protected int staffId;
     protected double salary;
@@ -26,6 +27,15 @@ public abstract class Staff extends Person {
         System.out.println("Gender: " + getGender());
         System.out.println("Contact: " + getNumber());
         System.out.println("Salary: " + this.salary);
+        
+        try {
+            if (this.hireDate == null) {
+                throw new NullPointerException("Hire date is missing from record.");
+            }
+            System.out.println("Hire Date: " + this.hireDate);
+        } catch (NullPointerException e) {
+            System.out.println("Hire Date: [Not Available]");
+        }
     }
 
     public abstract double calculateBonus();

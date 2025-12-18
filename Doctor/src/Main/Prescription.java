@@ -10,7 +10,15 @@ public class Prescription implements Printable {
     }
 
     public void setMedication(String medication) {
-        this.medication = medication;
+        try {
+            if (medication == null) {
+                throw new IllegalArgumentException("Medication name cannot be empty.");
+            }
+            // Original Logic
+            this.medication = medication;
+        } catch (IllegalArgumentException e) {
+            System.err.println("Input Error: " + e.getMessage());
+        }
     }
 
     public void setDosage(String dosage) {
@@ -32,8 +40,17 @@ public class Prescription implements Printable {
     public String getInstructions() {
         return instructions;
     }
+
     public void printDetails(){
-         System.out.println("the medication :  " + medication +"the dosage : " + dosage + "Instructions : "+ instructions);
+        try {
+            if (medication == null || dosage == null) {
+                throw new IllegalStateException("Prescription details are incomplete.");
+            }
+            // Original Logic
+             System.out.println("the medication :  " + medication +"the dosage : " + dosage + "Instructions : "+ instructions);
+        } catch (IllegalStateException e) {
+            System.err.println("Printing Error: " + e.getMessage());
+        }
     }
 
     public void displayRx() {
@@ -44,6 +61,4 @@ public class Prescription implements Printable {
     public String toString() {
         return "Prescription{" + "medication=" + medication + ", dosage=" + dosage + ", instructions=" + instructions + '}';
     }
-    
 }
-
