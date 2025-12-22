@@ -1,3 +1,7 @@
+package com;
+
+
+
 public class Prescription implements Printable {
     private String medication;
     private String dosage;

@@ -1,3 +1,7 @@
+package com;
+
+
+
 import java.util.Date;
 
 public abstract class Staff extends Person {

@@ -1,3 +1,4 @@
+package com;
 import java.util.Date;
 
 public class Appointment implements Schedulable, Notifiable, Comparable<Appointment> {
@@ -17,6 +18,9 @@ public class Appointment implements Schedulable, Notifiable, Comparable<Appointm
 
     public Patient getPatient(){
         return this.patient;
+    }
+      public Doctor getDoctor(){
+        return this.doctor;
     }
 
     public void setPayment(Payment p) {
