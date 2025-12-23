@@ -1,0 +1,14 @@
+# Maven
+**/target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SDKMAN cache
+/.sdkman/archives/
