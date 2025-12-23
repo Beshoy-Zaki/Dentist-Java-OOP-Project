@@ -24,9 +24,8 @@ mvn -f Doctor/pom.xml exec:java
 ```
 
 Notes
-- The project uses JavaFX 11 artifacts built for Linux. If you run on
-  macOS or Windows, update the JavaFX dependency classifiers in
-  `Doctor/pom.xml` (or add Maven profiles) to match your OS.
+- The project is configured for **Java 25** and **JavaFX 25.0.1**. If you run on macOS or Windows, adjust JavaFX dependency classifiers in `Doctor/pom.xml` or add Maven profiles to match your OS.
+- Sources now follow the standard Maven layout with package `com` (files under `src/main/java/com` and tests under `src/test/java/com`), which is NetBeans-friendly.
 - If you need a portable Maven wrapper, I can add `mvnw` to the repo.## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
