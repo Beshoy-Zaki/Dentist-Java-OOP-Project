@@ -1,7 +1,7 @@
-DoctorTest.class
-AppointmentTest.class
-ReceptionistTest.class
-PrescriptionTest.class
-PatientTest.class
-PersonStaffTest.class
-PaymentTest.class
+com/PaymentTest.class
+com/AppointmentTest.class
+com/ReceptionistTest.class
+com/DoctorTest.class
+com/PatientTest.class
+com/PersonStaffTest.class
+com/PrescriptionTest.class

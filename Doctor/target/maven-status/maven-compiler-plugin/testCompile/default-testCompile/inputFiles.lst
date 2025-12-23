@@ -1,7 +1,7 @@
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/PrescriptionTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/PaymentTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/DoctorTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/PatientTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/AppointmentTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/ReceptionistTest.java
-/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/PersonStaffTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/PaymentTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/AppointmentTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/ReceptionistTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/PatientTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/DoctorTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/PersonStaffTest.java
+/workspaces/Dentist-Java-OOP-Project/Doctor/src/test/java/com/PrescriptionTest.java
